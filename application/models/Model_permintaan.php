@@ -18,12 +18,12 @@
 
         if( ! $this->upload->do_upload('filename')){
           $error = array('error'=> $this->upload->display_errors());
-          // $data['jumlah'] = $this->getjumlahnotif();
-          // $data['hasil'] = $this->ambilnotif();
-          // $data['profil'] = $this->get_profile();
-          // $this->load->view('admin/permintaan/add',$data);
+          $data['jumlah'] = $this->getjumlahnotif();
+          $data['hasil'] = $this->ambilnotif();
+          $data['profil'] = $this->get_profile();
+          $this->load->view('admin/permintaan/add',$data);
         }else{
-          // $upload_data = $this->upload->data();
+          $upload_data = $this->upload->data();
            $data = array(
                'nomor' => $this->input->post('nomor'),
                'disposisi' => $this->input->post('disposisi'),
