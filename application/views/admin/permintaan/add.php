@@ -22,6 +22,16 @@
       </ol>
     </section>
 
+    <script type="text/javascript">
+         function check(value)
+        {
+            if(value.length<1)
+            {
+            document.getElementById('error-file').innerHTML="this is an invalid name";  
+            }    
+        }
+         
+      </script>
     <!-- Main content -->
     <section class="content">
 
@@ -147,7 +157,7 @@
                             <div class="form-group" style="margin-top:10px">
                                 <span class="col-xs-2" style="margin-left:10px; margin-bottom:15px; font-size:18px">Upload berkas :</span>
                                 <div class="col-xs-4">
-                                    <input type="file" name="filename"  />
+                                    <input type="file" name="filename"  onblur="check(this.value)"  />
                                 </div>
                                 
                             </div>
