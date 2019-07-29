@@ -71,7 +71,7 @@ Class Permintaan extends CI_Controller {
 
     
    function upload_file(){
-       $config['uplo    ad_path'] = './uploads/';
+       $config['upload_path'] = './uploads/';
        $config['allowed_types'] = 'doc|docx';
        $this->load->library('upload',$config);
        $upload_data = $this->upload->data();
@@ -83,7 +83,7 @@ Class Permintaan extends CI_Controller {
         $data['profil'] = $this->Model_permintaan->get_profile();
         if (isset($_POST['submit'])) {
             $this->Model_permintaan->add();
-            redirect('admin/home');
+            // redirect('admin/home');
         } else {
             $this->load->view('admin/permintaan/add', $data);
         }

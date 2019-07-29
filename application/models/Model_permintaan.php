@@ -9,7 +9,7 @@
       }
       
        function add() {
-        // nanti dibuka
+        // nanti dibuk  a
 
         $config['upload_path']  ='./upload/';
         $config['allowed_types']  ='doc|docx|pdf|gif|jpg|png';
@@ -21,6 +21,8 @@
           $data['jumlah'] = $this->getjumlahnotif();
           $data['hasil'] = $this->ambilnotif();
           $data['profil'] = $this->get_profile();
+          $this->session->set_flashdata('message', 'Gagal input data : silahkan masukkan data anda dengan lengkap !!!!');
+          
           $this->load->view('admin/permintaan/add',$data);
         }else{
           $upload_data = $this->upload->data();
@@ -40,6 +42,8 @@
                
                    
            );
+
+           
            $this->db->insert('tbl_nota', $data);
            
            $id_nota = $this->input->post('id_nota');
@@ -93,7 +97,8 @@
                'tobeuser' => $namauser1
             );
             return $hasil2['username'];
-          
+           $this->session->set_flashdata('message', 'Berhasil input data');
+           $this->load->view('admin/home', $data);
         }
        }
 

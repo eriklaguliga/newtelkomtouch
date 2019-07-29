@@ -41,6 +41,7 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">Silahkan Isi Request Data</h3>
                 </div>
+                <input type="text" class="form-control" placeholder="Silahkan mengisi data anda dengan lengkap" name="" readonly value="<?php echo $this->session->flashdata('message')?>"/>
                 <!-- /.box-header -->
                 <?php
                 echo form_open_multipart('admin/permintaan/add');
